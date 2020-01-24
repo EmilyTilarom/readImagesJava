@@ -1,14 +1,10 @@
-import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 
 import javax.swing.*;
-import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-
-import static java.lang.System.console;
 
 public class Main {
 
@@ -126,7 +122,13 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println(text + "Texts were saved to " + imagePath + "\\output.txt");
+        if(text.equals("")){
+            System.out.println("No text was found");
+        }
+        else{
+            System.out.println(text + "Texts were saved to " + imagePath + "\\output.txt");
+        }
+        System.in.read();
 
 
 
